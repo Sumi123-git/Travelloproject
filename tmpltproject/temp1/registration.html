@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>REGISTRATION-FORM</title>
+        <link rel= "stylesheet"  href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body style="background-color:#C0392B">
+ <nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand" style="background-color:orange">REGISTRATION-FORM</a>
+ </nav>
+<form  action="register" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="firstname" placeholder="firstname"><br>
+    <input type="text" name="lastname" placeholder="lastname"><br>
+    <input type="email" name="email" placeholder="email"><br>
+    <input type="password" name="password" placeholder="password"><br>
+    <input type="password" name="cpassword" placeholder="conform-password"><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+<h4>{{msg}}</h4>
+{% endfor %}
+</body>
+</html>
